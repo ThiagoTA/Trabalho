@@ -78,7 +78,7 @@ app.post('/produtos', checkUserExist, (request, response) => {
         situacao = "Boa"
     }else situacao = "Excelente"
     
-    return response.json({id, nome, quantidade, valor_uni, preco_total, preco_total, lucro, situacao ,complemento})
+    return response.json({id, nome, quantidade, valor_uni, preco_total, preco_venda, lucro, situacao ,complemento})
 })
 
 app.put("/produtos", checkUserExistID, checkUserExist, (request, response) => {
@@ -94,7 +94,7 @@ app.put("/produtos", checkUserExistID, checkUserExist, (request, response) => {
         situacao = "Boa"
     }else situacao = "Excelente"
     
-    produtos[id] = {id, nome, quantidade, valor_uni, preco_total, preco_total, lucro, situacao}
+    produtos[id] = {id, nome, quantidade, valor_uni, preco_total, preco_venda, lucro, situacao}
     return response.json(produtos[id])
 })
 
